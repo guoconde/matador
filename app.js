@@ -26,8 +26,12 @@ new Vue({
             this.getName()
         },
         getName() {
-            const receberNome = document.querySelector('.name')?.value
-            this.playerName = receberNome
+            if(this.playerName == '') {
+                const receberNome = document.querySelector('.name').value
+                this.playerName = receberNome
+            } else {
+                return this.playerName
+            }
             this.playerReady = true
         },
         giveUp() {
